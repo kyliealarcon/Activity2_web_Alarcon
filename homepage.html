@@ -6,9 +6,9 @@
   <title>kylie Salon</title>
   <style>
     :root{
-      --bg:#1f1925;         /* deep plum to match logo */
+      --bg:#1f1925;         
       --text:#f5f2f7;
-      --gold:#d5a772;       /* soft gold accent */
+      --gold:#d5a772;       
       --gold-2:#b98a59;
     }
     *{box-sizing:border-box}
@@ -18,7 +18,7 @@
       color:var(--text); background:var(--bg);
     }
 
-    /* ====== Top Navigation ====== */
+    
     .nav{
       position:sticky; top:0; z-index:10;
       display:flex; align-items:center; gap:24px;
@@ -39,13 +39,13 @@
     }
     .nav a:hover{ background:rgba(213,167,114,.12); color:#fff; transform:translateY(-1px) }
 
-    /* ====== Hero ====== */
+    
     .hero{
       position:relative; height:82vh; min-height:520px; display:grid; place-items:center; text-align:center; overflow:hidden;
       background: radial-gradient(1200px 600px at 70% 10%, rgba(213,167,114,.18), transparent 60%),
                   linear-gradient(180deg, #251d2b 0%, #17121d 100%);
     }
-    .hero::before{ /* background image */
+    .hero::before{ 
       content:""; position:absolute; inset:0; background:url('salon.jpg') center/cover no-repeat; opacity:.25; filter:saturate(0.8) contrast(1.05);
     }
     .hero .card{
@@ -66,7 +66,7 @@
     }
     p.lead{ margin:0 auto 20px; max-width:56ch; opacity:.9; font-size:clamp(14px,1.6vw,18px) }
 
-    /* ====== Buttons ====== */
+   
     .actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap }
     .btn{
       appearance:none; border:1px solid rgba(213,167,114,.35); color:#1a141f; background:linear-gradient(180deg,var(--gold),var(--gold-2));
@@ -75,10 +75,10 @@
     .btn.secondary{ background:transparent; color:var(--text); border-color:rgba(213,167,114,.35) }
     .btn:hover{ transform:translateY(-1px) }
 
-    /* ====== Footer ====== */
+ 
     footer{ text-align:center; padding:26px; color:#bfb8c9; font-size:14px; border-top:1px solid rgba(213,167,114,.15) }
 
-    /* ====== Responsive ====== */
+    
     @media (max-width:560px){
       .nav{ gap:12px; padding:12px 16px }
       .brand span{ display:none }
@@ -88,7 +88,7 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  
   <header class="nav">
     <a class="brand" href="#">
       <!-- Optional small logo on nav (same file) -->
@@ -100,10 +100,10 @@
     <a href="#contact">Contact Us</a>
   </header>
 
-  <!-- Hero Section -->
+  
   <section id="home" class="hero">
     <div class="card">
-      <!-- Big central logo -->
+      
       <img class="logo" src="salon.jpg" alt="Salon Logo" />
       <h1>Where Style Meets Serenity</h1>
       <p class="lead">Experience premium hair and beauty care with a touch of luxury. Book your appointment today and let our professionals bring out your best look.</p>
@@ -114,7 +114,7 @@
     </div>
   </section>
 
-  <!-- Simple placeholders for routing -->
+  
   <footer>
     © <span id="y"></span> Serene Salon. All rights reserved.
   </footer>
