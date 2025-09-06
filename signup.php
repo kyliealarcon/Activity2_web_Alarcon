@@ -1,5 +1,5 @@
 <?php
-// Database connection (XAMPP default: root user, no password)
+// Database connection 
 $conn = new mysqli("localhost", "root", "", "activity2_web_alarcon");
 
 // Check connection
@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Run only if form is submitted
+// Run  submitted
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = $conn->real_escape_string($_POST['firstname']);
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $firstname, $lastname, $email, $password);
 
     if ($stmt->execute()) {
-        // ✅ Redirect to login.php after successful registration
+        // Redirect to login.php after successful registration
         header("Location: login.php");
         exit();
     } else {

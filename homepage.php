@@ -1,7 +1,143 @@
-<button type="submit" class="btn-register">Sign Up</button>
-</form>
+<?php
+// Optional: Start session if you want to track login user
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon Homepage</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-<!-- Add Login link below -->
-<p style="text-align:center; margin-top:15px; font-size:14px;">
-  Already have an account? <a href="login.php" style="color:#c618f2; font-weight:bold; text-decoration:none;">Login here</a>
-</p>
+/* Navigation Bar */
+.navbar {
+  background: #333;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; 
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero-buttons {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Button Style */
+.hero-buttons .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 30px;
+  background: #c618f2;  /* purple-pink */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.hero-buttons .btn:hover {
+  background: #bf1478; /* darker pink on hover */
+}
+
+/* Sections */
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+
+    <?php if (isset($_SESSION['user'])): ?>
+      <li><a href="logout.php">Logout</a></li>
+    <?php else: ?>
+      <li><a href="signup.php">Sign Up</a></li>
+      <li><a href="login.php">Login</a></li>
+    <?php endif; ?>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <img src="salon.jpg" alt="Image of the Salon">
+  <div class="hero-buttons">
+    <?php if (!isset($_SESSION['user'])): ?>
+      <a href="signup.php" class="btn">Sign Up</a>
+      <a href="login.php" class="btn">Login</a>
+    <?php else: ?>
+      <a href="services.php" class="btn">Our Services</a>
+      <a href="profile.php" class="btn">My Profile</a>
+    <?php endif; ?>
+  </div>
+</div>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Our Salon</h2>
+  <p>Welcome to our salon! We provide premium beauty and wellness services with professional stylists in a relaxing environment.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: kylienorienalarcon@gmail.com</p>
+  <p>Phone: +639951316883</p>
+</section>
+
+</body>
+</html>
