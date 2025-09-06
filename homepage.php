@@ -1,5 +1,5 @@
 <?php
-// Optional: Start session if you want to track login user
+
 session_start();
 ?>
 <!DOCTYPE html>
