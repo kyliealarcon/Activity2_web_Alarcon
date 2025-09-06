@@ -1,0 +1,168 @@
+/* ====== Variables ====== */
+:root{
+  --primary:#c618f2;
+  --primary-hover:#bf1478;
+  --focus:#f21885;
+  --bg:#f2f2f2;
+  --text:#333;
+  --radius:6px;
+  --shadow:0 2px 6px rgba(0,0,0,.1);
+  --font: Arial, sans-serif;
+}
+
+/* ====== Page base ====== */
+body{
+  font-family:var(--font);
+  background-color:var(--bg);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+/* ====== Card/Box (login + register share this) ====== */
+.login-box,
+.register-box{
+  width:400px;
+  max-width:90%;
+  padding:25px;
+  border:1px solid #ccc;
+  background:#fff;
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+}
+
+/* Headings */
+.login-box h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:22px;
+}
+.register-box h2{
+  text-align:left;
+  margin-bottom:20px;
+  font-size:22px;
+  color:#090909;
+}
+
+/* Labels */
+.login-box label,
+.register-box label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:500;
+  font-size:14px;
+  color:var(--text);
+}
+
+/* Inputs */
+.login-box input[type="email"],
+.login-box input[type="password"],
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"]{
+  width:100%;
+  padding:10px;
+  margin-bottom:14px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:14px;
+  outline:none;
+  box-sizing:border-box;
+}
+
+/* Slightly smaller padding for signup to match your original */
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"]{
+  padding:8px;
+}
+
+/* Focus */
+.login-box input:focus,
+.register-box input:focus{
+  border-color:var(--focus);
+  box-shadow:0 0 3px rgba(231,24,242,.3);
+}
+
+/* Name row (signup) */
+.name-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.name-row div{
+  flex:1;
+}
+.name-row input{ width:100%; }
+
+/* Agree checkbox (login) */
+.login-box .agree{
+  display:flex;
+  align-items:center;
+  font-size:13px;
+  margin-bottom:16px;
+  color:#444;
+}
+.login-box .agree input{ margin-right:8px; }
+
+/* ====== Buttons ====== */
+.btn{
+  display:block;
+  padding:10px;
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+  font-size:15px;
+  font-weight:bold;
+  transition:background .2s ease;
+}
+.btn:hover{ background:var(--primary-hover); }
+
+.btn-login{
+  composes: btn; /* safe to ignore if your editor doesn't support; .btn applies anyway */
+  width:50%;
+  margin:0 auto;
+}
+
+.btn-register{
+  composes: btn;
+  width:100%;
+  margin-top:10px;
+}
+
+/* Messages */
+.error{
+  color:red;
+  text-align:center;
+  margin-bottom:10px;
+}
+.message{
+  margin-top:15px;
+  font-size:14px;
+  color:green;
+}
+
+/* Login link under signup */
+.login-link{
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+}
+.login-link a{
+  color:var(--primary);
+  font-weight:bold;
+  text-decoration:none;
+}
+.login-link a:hover{ text-decoration:underline; }
+
+/* ====== Responsive ====== */
+@media (max-width:480px){
+  .login-box, .register-box{ padding:20px; }
+  .btn-login{ width:70%; }
+}
