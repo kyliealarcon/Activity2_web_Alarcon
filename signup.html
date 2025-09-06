@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>signup Page</title>
+  <title>Signup Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -26,9 +26,10 @@
     }
 
     .register-box h2 {
-      text-align: center;
+      text-align: left; /* align heading to left */
       margin-bottom: 20px;
       font-size: 22px;
+      color: #090909; /* optional highlight color */
     }
 
     .register-box label {
@@ -43,7 +44,7 @@
     .register-box input[type="email"],
     .register-box input[type="password"] {
       width: 100%;
-      padding: 10px;
+      padding: 8px;
       margin-bottom: 14px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -55,6 +56,21 @@
     .register-box input:focus {
       border-color: #f21885;
       box-shadow: 0 0 3px rgba(231, 24, 242, 0.3);
+    }
+
+    /* First and last name side by side */
+    .name-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .name-row div {
+      flex: 1;
+    }
+
+    .name-row input {
+      width: 100%;
     }
 
     /* Signup button styled same as login button */
@@ -80,13 +96,18 @@
 </head>
 <body>
   <div class="register-box">
-    <h2>Register</h2>
+    <h2>REGISTER NOW</h2>
     <form>
-      <label for="firstname">First Name</label>
-      <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
-
-      <label for="lastname">Last Name</label>
-      <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+      <div class="name-row">
+        <div>
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+        </div>
+        <div>
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+        </div>
+      </div>
 
       <label for="email">Email Address</label>
       <input type="email" id="email" name="email" placeholder="Enter your email address" required>
